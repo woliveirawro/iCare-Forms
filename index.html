@@ -14,6 +14,10 @@
         h1 {
             text-align: center;
         }
+        .container {
+            max-width: 800px;
+            margin: auto;
+        }
         table {
             width: 100%;
             border-collapse: collapse;
@@ -39,95 +43,287 @@
         input[type="radio"] {
             margin: 5px;
         }
+        .leader-input, .save-btn {
+            margin: 20px 0;
+            text-align: center;
+        }
+        .save-btn button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .save-btn button:hover {
+            background-color: #45a049;
+        }
     </style>
 </head>
 <body>
 
-    <h1>Avaliação dos Prestadores de Serviços</h1>
-    <p>Por favor, avalie cada prestador de serviços com uma nota de 1 a 5 para cada critério.</p>
+    <div class="container">
+        <h1>Avaliação dos Prestadores de Serviços</h1>
 
-    <table>
-        <thead>
-            <tr>
-                <th>Foto</th>
-                <th>Nome</th>
-                <th>Área</th>
-                <th>Engajamento com a Cultura</th>
-                <th>Aderência às Políticas e Regras</th>
-                <th>Participação em Reuniões e Treinamentos</th>
-                <th>Proatividade no Aculturamento</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td><img src="fotos/lilo01.jpg" alt="Foto do funcionário"></td>
-                <td>Murilo Augusto</td>
-                <td>Tecnologia</td>
-                <td>
-                    <label><input type="radio" name="engajamento1" value="1">1</label>
-                    <label><input type="radio" name="engajamento1" value="2">2</label>
-                    <label><input type="radio" name="engajamento1" value="3">3</label>
-                    <label><input type="radio" name="engajamento1" value="4">4</label>
-                    <label><input type="radio" name="engajamento1" value="5">5</label>
-                </td>
-                <td>
-                    <label><input type="radio" name="aderencia1" value="1">1</label>
-                    <label><input type="radio" name="aderencia1" value="2">2</label>
-                    <label><input type="radio" name="aderencia1" value="3">3</label>
-                    <label><input type="radio" name="aderencia1" value="4">4</label>
-                    <label><input type="radio" name="aderencia1" value="5">5</label>
-                </td>
-                <td>
-                    <label><input type="radio" name="participacao1" value="1">1</label>
-                    <label><input type="radio" name="participacao1" value="2">2</label>
-                    <label><input type="radio" name="participacao1" value="3">3</label>
-                    <label><input type="radio" name="participacao1" value="4">4</label>
-                    <label><input type="radio" name="participacao1" value="5">5</label>
-                </td>
-                <td>
-                    <label><input type="radio" name="proatividade1" value="1">1</label>
-                    <label><input type="radio" name="proatividade1" value="2">2</label>
-                    <label><input type="radio" name="proatividade1" value="3">3</label>
-                    <label><input type="radio" name="proatividade1" value="4">4</label>
-                    <label><input type="radio" name="proatividade1" value="5">5</label>
-                </td>
-            </tr>
-            <!-- Repita o bloco acima para mais funcionários -->
-        </tbody>
-        <tr>
-            <td><img src="fotos/Lilo.jpg" alt="Foto do funcionário"></td>
-            <td>Wander Oliveira</td>
-            <td>Tecnologia</td>
-            <td>
-                <label><input type="radio" name="engajamento1" value="1">1</label>
-                <label><input type="radio" name="engajamento1" value="2">2</label>
-                <label><input type="radio" name="engajamento1" value="3">3</label>
-                <label><input type="radio" name="engajamento1" value="4">4</label>
-                <label><input type="radio" name="engajamento1" value="5">5</label>
-            </td>
-            <td>
-                <label><input type="radio" name="aderencia1" value="1">1</label>
-                <label><input type="radio" name="aderencia1" value="2">2</label>
-                <label><input type="radio" name="aderencia1" value="3">3</label>
-                <label><input type="radio" name="aderencia1" value="4">4</label>
-                <label><input type="radio" name="aderencia1" value="5">5</label>
-            </td>
-            <td>
-                <label><input type="radio" name="participacao1" value="1">1</label>
-                <label><input type="radio" name="participacao1" value="2">2</label>
-                <label><input type="radio" name="participacao1" value="3">3</label>
-                <label><input type="radio" name="participacao1" value="4">4</label>
-                <label><input type="radio" name="participacao1" value="5">5</label>
-            </td>
-            <td>
-                <label><input type="radio" name="proatividade1" value="1">1</label>
-                <label><input type="radio" name="proatividade1" value="2">2</label>
-                <label><input type="radio" name="proatividade1" value="3">3</label>
-                <label><input type="radio" name="proatividade1" value="4">4</label>
-                <label><input type="radio" name="proatividade1" value="5">5</label>
-            </td>
-        </tr>
-    </table>
+        <!-- Campo para Nome do Líder -->
+        <div class="leader-input">
+            <label for="leaderName">Nome do Líder do Projeto:</label>
+            <input type="text" id="leaderName" placeholder="Digite o nome do líder" required>
+        </div>
+
+        <p>Por favor, avalie cada prestador de serviços com uma nota de 1 a 5 para cada critério.</p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Foto</th>
+                    <th>Nome</th>
+                    <th>Área</th>
+                    <th>Engajamento com a Cultura</th>
+                    <th>Aderência às Políticas e Regras</th>
+                    <th>Participação em Reuniões e Treinamentos</th>
+                    <th>Proatividade no Aculturamento</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Funcionário 1 -->
+                <tr>
+                    <td><img src="fotos/lilo01.jpg" alt="Foto do funcionário"></td>
+                    <td>Murilo Augusto</td>
+                    <td>Tecnologia</td>
+                    <td>
+                        <label><input type="radio" name="engajamento_murilo" value="1">1</label>
+                        <label><input type="radio" name="engajamento_murilo" value="2">2</label>
+                        <label><input type="radio" name="engajamento_murilo" value="3">3</label>
+                        <label><input type="radio" name="engajamento_murilo" value="4">4</label>
+                        <label><input type="radio" name="engajamento_murilo" value="5">5</label>
+                    </td>
+                    <td>
+                        <label><input type="radio" name="aderencia_murilo" value="1">1</label>
+                        <label><input type="radio" name="aderencia_murilo" value="2">2</label>
+                        <label><input type="radio" name="aderencia_murilo" value="3">3</label>
+                        <label><input type="radio" name="aderencia_murilo" value="4">4</label>
+                        <label><input type="radio" name="aderencia_murilo" value="5">5</label>
+                    </td>
+                    <td>
+                        <label><input type="radio" name="participacao_murilo" value="1">1</label>
+                        <label><input type="radio" name="participacao_murilo" value="2">2</label>
+                        <label><input type="radio" name="participacao_murilo" value="3">3</label>
+                        <label><input type="radio" name="participacao_murilo" value="4">4</label>
+                        <label><input type="radio" name="participacao_murilo" value="5">5</label>
+                    </td>
+                    <td>
+                        <label><input type="radio" name="proatividade_murilo" value="1">1</label>
+                        <label><input type="radio" name="proatividade_murilo" value="2">2</label>
+                        <label><input type="radio" name="proatividade_murilo" value="3">3</label>
+                        <label><input type="radio" name="proatividade_murilo" value="4">4</label>
+                        <label><input type="radio" name="proatividade_murilo" value="5">5</label>
+                    </td>
+                </tr>
+
+                <!-- Adicionei outros 5 funcionários abaixo com avaliações independentes -->
+                <!-- Funcionário 2 -->
+                <tr>
+                    <td><img src="fotos/joao.jpg" alt="Foto do funcionário"></td>
+                    <td>João Oliveira</td>
+                    <td>Recursos Humanos</td>
+                    <td>
+                        <label><input type="radio" name="engajamento_joao" value="1">1</label>
+                        <label><input type="radio" name="engajamento_joao" value="2">2</label>
+                        <label><input type="radio" name="engajamento_joao" value="3">3</label>
+                        <label><input type="radio" name="engajamento_joao" value="4">4</label>
+                        <label><input type="radio" name="engajamento_joao" value="5">5</label>
+                    </td>
+                    <td>
+                        <label><input type="radio" name="aderencia_joao" value="1">1</label>
+                        <label><input type="radio" name="aderencia_joao" value="2">2</label>
+                        <label><input type="radio" name="aderencia_joao" value="3">3</label>
+                        <label><input type="radio" name="aderencia_joao" value="4">4</label>
+                        <label><input type="radio" name="aderencia_joao" value="5">5</label>
+                    </td>
+                    <td>
+                        <label><input type="radio" name="participacao_joao" value="1">1</label>
+                        <label><input type="radio" name="participacao_joao" value="2">2</label>
+                        <label><input type="radio" name="participacao_joao" value="3">3</label>
+                        <label><input type="radio" name="participacao_joao" value="4">4</label>
+                        <label><input type="radio" name="participacao_joao" value="5">5</label>
+                    </td>
+                    <td>
+                        <label><input type="radio" name="proatividade_joao" value="1">1</label>
+                        <label><input type="radio" name="proatividade_joao" value="2">2</label>
+                        <label><input type="radio" name="proatividade_joao" value="3">3</label>
+                        <label><input type="radio" name="proatividade_joao" value="4">4</label>
+                        <label><input type="radio" name="proatividade_joao" value="5">5</label>
+                    </td>
+                </tr>
+
+                <!-- Funcionário 3 -->
+                <tr>
+                    <td><img src="fotos/maria.jpg" alt="Foto do funcionário"></td>
+                    <td>Maria Fernandes</td>
+                    <td>Financeiro</td>
+                    <td>
+                        <label><input type="radio" name="engajamento_maria" value="1">1</label>
+                        <label><input type="radio" name="engajamento_maria" value="2">2</label>
+                        <label><input type="radio" name="engajamento_maria" value="3">3</label>
+                        <label><input type="radio" name="engajamento_maria" value="4">4</label>
+                        <label><input type="radio" name="engajamento_maria" value="5">5</label>
+                    </td>
+                    <td>
+                        <label><input type="radio" name="aderencia_maria" value="1">1</label>
+                        <label><input type="radio" name="aderencia_maria" value="2">2</label>
+                        <label><input type="radio" name="aderencia_maria" value="3">3</label>
+                        <label><input type="radio" name="aderencia_maria" value="4">4</label>
+                        <label><input type="radio" name="aderencia_maria" value="5">5</label>
+                    </td>
+                    <td>
+                        <label><input type="radio" name="participacao_maria" value="1">1</label>
+                        <label><input type="radio" name="participacao_maria" value="2">2</label>
+                        <label><input type="radio" name="participacao_maria" value="3">3</label>
+                        <label><input type="radio" name="participacao_maria" value="4">4</label>
+                        <label><input type="radio" name="participacao_maria" value="5">5</label>
+                    </td>
+                    <td>
+                        <label><input type="radio" name="proatividade_maria" value="1">1</label>
+                        <label><input type="radio" name="proatividade_maria" value="2">2</label>
+                        <label><input type="radio" name="proatividade_maria" value="3">3</label>
+                        <label><input type="radio" name="proatividade_maria" value="4">4</label>
+                        <label><input type="radio" name="proatividade_maria" value="5">5</label>
+                    </td>
+                </tr>
+
+                <!-- Funcionário 4 -->
+                <tr>
+                    <td><img src="fotos/carlos.jpg" alt="Foto do funcionário"></td>
+                    <td>Carlos Lima</td>
+                    <td>Marketing</td>
+                    <td>
+                        <label><input type="radio" name="engajamento_carlos" value="1">1</label>
+                        <label><input type="radio" name="engajamento_carlos" value="2">2</label>
+                        <label><input type="radio" name="engajamento_carlos" value="3">3</label>
+                        <label><input type="radio" name="engajamento_carlos" value="4">4</label>
+                        <label><input type="radio" name="engajamento_carlos" value="5">5</label>
+                    </td>
+                    <td>
+                        <label><input type="radio" name="aderencia_carlos" value="1">1</label>
+                        <label><input type="radio" name="aderencia_carlos" value="2">2</label>
+                        <label><input type="radio" name="aderencia_carlos" value="3">3</label>
+                        <label><input type="radio" name="aderencia_carlos" value="4">4</label>
+                        <label><input type="radio" name="aderencia_carlos" value="5">5</label>
+                    </td>
+                    <td>
+                        <label><input type="radio" name="participacao_carlos" value="1">1</label>
+                        <label><input type="radio" name="participacao_carlos" value="2">2</label>
+                        <label><input type="radio" name="participacao_carlos" value="3">3</label>
+                        <label><input type="radio" name="participacao_carlos" value="4">4</label>
+                        <label><input type="radio" name="participacao_carlos" value="5">5</label>
+                    </td>
+                    <td>
+                        <label><input type="radio" name="proatividade_carlos" value="1">1</label>
+                        <label><input type="radio" name="proatividade_carlos" value="2">2</label>
+                        <label><input type="radio" name="proatividade_carlos" value="3">3</label>
+                        <label><input type="radio" name="proatividade_carlos" value="4">4</label>
+                        <label><input type="radio" name="proatividade_carlos" value="5">5</label>
+                    </td>
+                </tr>
+
+                <!-- Funcionário 5 -->
+                <tr>
+                    <td><img src="fotos/ana.jpg" alt="Foto do funcionário"></td>
+                    <td>Ana Souza</td>
+                    <td>TI</td>
+                    <td>
+                        <label><input type="radio" name="engajamento_ana" value="1">1</label>
+                        <label><input type="radio" name="engajamento_ana" value="2">2</label>
+                        <label><input type="radio" name="engajamento_ana" value="3">3</label>
+                        <label><input type="radio" name="engajamento_ana" value="4">4</label>
+                        <label><input type="radio" name="engajamento_ana" value="5">5</label>
+                    </td>
+                    <td>
+                        <label><input type="radio" name="aderencia_ana" value="1">1</label>
+                        <label><input type="radio" name="aderencia_ana" value="2">2</label>
+                        <label><input type="radio" name="aderencia_ana" value="3">3</label>
+                        <label><input type="radio" name="aderencia_ana" value="4">4</label>
+                        <label><input type="radio" name="aderencia_ana" value="5">5</label>
+                    </td>
+                    <td>
+                        <label><input type="radio" name="participacao_ana" value="1">1</label>
+                        <label><input type="radio" name="participacao_ana" value="2">2</label>
+                        <label><input type="radio" name="participacao_ana" value="3">3</label>
+                        <label><input type="radio" name="participacao_ana" value="4">4</label>
+                        <label><input type="radio" name="participacao_ana" value="5">5</label>
+                    </td>
+                    <td>
+                        <label><input type="radio" name="proatividade_ana" value="1">1</label>
+                        <label><input type="radio" name="proatividade_ana" value="2">2</label>
+                        <label><input type="radio" name="proatividade_ana" value="3">3</label>
+                        <label><input type="radio" name="proatividade_ana" value="4">4</label>
+                        <label><input type="radio" name="proatividade_ana" value="5">5</label>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Botão Salvar -->
+        <div class="save-btn">
+            <button type="button" onclick="salvarAvaliacoes()">Salvar Avaliações</button>
+        </div>
+    </div>
+
+    <script>
+        function salvarAvaliacoes() {
+            const leaderName = document.getElementById('leaderName').value;
+            if (!leaderName) {
+                alert("Por favor, insira o nome do líder do projeto.");
+                return;
+            }
+
+            // Coletando dados das avaliações
+            const avaliacoes = {
+                leader: leaderName,
+                funcionarios: [
+                    {
+                        nome: "Murilo Augusto",
+                        engajamento: document.querySelector('input[name="engajamento_murilo"]:checked')?.value || null,
+                        aderencia: document.querySelector('input[name="aderencia_murilo"]:checked')?.value || null,
+                        participacao: document.querySelector('input[name="participacao_murilo"]:checked')?.value || null,
+                        proatividade: document.querySelector('input[name="proatividade_murilo"]:checked')?.value || null
+                    },
+                    {
+                        nome: "João Oliveira",
+                        engajamento: document.querySelector('input[name="engajamento_joao"]:checked')?.value || null,
+                        aderencia: document.querySelector('input[name="aderencia_joao"]:checked')?.value || null,
+                        participacao: document.querySelector('input[name="participacao_joao"]:checked')?.value || null,
+                        proatividade: document.querySelector('input[name="proatividade_joao"]:checked')?.value || null
+                    },
+                    {
+                        nome: "Maria Fernandes",
+                        engajamento: document.querySelector('input[name="engajamento_maria"]:checked')?.value || null,
+                        aderencia: document.querySelector('input[name="aderencia_maria"]:checked')?.value || null,
+                        participacao: document.querySelector('input[name="participacao_maria"]:checked')?.value || null,
+                        proatividade: document.querySelector('input[name="proatividade_maria"]:checked')?.value || null
+                    },
+                    {
+                        nome: "Carlos Lima",
+                        engajamento: document.querySelector('input[name="engajamento_carlos"]:checked')?.value || null,
+                        aderencia: document.querySelector('input[name="aderencia_carlos"]:checked')?.value || null,
+                        participacao: document.querySelector('input[name="participacao_carlos"]:checked')?.value || null,
+                        proatividade: document.querySelector('input[name="proatividade_carlos"]:checked')?.value || null
+                    },
+                    {
+                        nome: "Ana Souza",
+                        engajamento: document.querySelector('input[name="engajamento_ana"]:checked')?.value || null,
+                        aderencia: document.querySelector('input[name="aderencia_ana"]:checked')?.value || null,
+                        participacao: document.querySelector('input[name="participacao_ana"]:checked')?.value || null,
+                        proatividade: document.querySelector('input[name="proatividade_ana"]:checked')?.value || null
+                    }
+                ]
+            };
+
+            console.log("Avaliações salvas:", avaliacoes);
+            alert("Avaliações salvas com sucesso!");
+        }
+    </script>
 
 </body>
 </html>
